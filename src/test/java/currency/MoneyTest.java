@@ -19,4 +19,12 @@ class MoneyTest {
     product = five.times(3);
     assertThat(product.amount).isEqualTo(15);
   }
+
+  @Test
+  void testEquality() {
+    Dollar five = new Dollar(5);
+    assertThat(five)
+            .isEqualTo(new Dollar(5))
+            .isNotEqualTo(new Dollar(6));
+  }
 }
