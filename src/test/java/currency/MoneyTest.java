@@ -20,10 +20,14 @@ class MoneyTest {
 
   @Test
   void testEquality() {
-    Dollar five = new Dollar(5);
-    assertThat(five)
+    Dollar dollarFive = new Dollar(5);
+    assertThat(dollarFive)
             .isEqualTo(new Dollar(5))
             .isNotEqualTo(new Dollar(6));
+    Franc francFive = new Franc(5);
+    assertThat(francFive)
+            .isEqualTo(new Franc(5))
+            .isNotEqualTo(new Franc(6));
   }
 
   @Test
