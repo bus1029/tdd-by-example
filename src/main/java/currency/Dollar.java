@@ -3,7 +3,7 @@ package currency;
 import java.util.Objects;
 
 public class Dollar {
-  public int amount;
+  private final int amount;
 
   public Dollar(int amount) {
     this.amount = amount;
