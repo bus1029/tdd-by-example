@@ -13,22 +13,23 @@ class MoneyTest {
 
   @Test
   void testMultiplication() {
-    Dollar five = new Dollar(5);
-    assertThat(five.times(2)).isEqualTo(new Dollar(10));
-    assertThat(five.times(3)).isEqualTo(new Dollar(15));
+//    Dollar five = new Dollar(5);
+    Money five = Money.dollar(5);
+    assertThat(five.times(2)).isEqualTo(Money.dollar(10));
+    assertThat(five.times(3)).isEqualTo(Money.dollar(15));
   }
 
   @Test
   void testEquality() {
-    Dollar dollarFive = new Dollar(5);
+    Money dollarFive = Money.dollar(5);
     assertThat(dollarFive)
-            .isEqualTo(new Dollar(5))
-            .isNotEqualTo(new Dollar(6));
-    Franc francFive = new Franc(5);
+            .isEqualTo(Money.dollar(5))
+            .isNotEqualTo(Money.dollar(6));
+    Money francFive = Money.franc(5);
     assertThat(francFive)
-            .isEqualTo(new Franc(5))
-            .isNotEqualTo(new Franc(6))
-            .isNotEqualTo(new Dollar(5));
+            .isEqualTo(Money.franc(5))
+            .isNotEqualTo(Money.franc(6))
+            .isNotEqualTo(Money.dollar(5));
   }
 
   @Test
