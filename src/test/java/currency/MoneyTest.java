@@ -27,7 +27,8 @@ class MoneyTest {
     Franc francFive = new Franc(5);
     assertThat(francFive)
             .isEqualTo(new Franc(5))
-            .isNotEqualTo(new Franc(6));
+            .isNotEqualTo(new Franc(6))
+            .isNotEqualTo(new Dollar(5));
   }
 
   @Test
