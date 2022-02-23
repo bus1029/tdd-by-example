@@ -25,4 +25,11 @@ class MoneyTest {
             .isEqualTo(new Dollar(5))
             .isNotEqualTo(new Dollar(6));
   }
+
+  @Test
+  void testFrancMultiplication() {
+    Franc five = new Franc(5);
+    assertThat(five.times(2)).isEqualTo(new Franc(10));
+    assertThat(five.times(3)).isEqualTo(new Franc(15));
+  }
 }
