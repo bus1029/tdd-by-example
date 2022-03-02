@@ -27,22 +27,7 @@ class MoneyTest {
             .isNotEqualTo(Money.dollar(6));
     Money francFive = Money.franc(5);
     assertThat(francFive)
-            .isEqualTo(Money.franc(5))
-            .isNotEqualTo(Money.franc(6))
             .isNotEqualTo(Money.dollar(5));
-  }
-
-  @Test
-  void testDifferentClassEquality() {
-    Money franc = new Money(10, "CHF");
-    assertThat(franc).isEqualTo(new Franc(10, "CHF"));
-  }
-
-  @Test
-  void testFrancMultiplication() {
-    Franc five = Money.franc(5);
-    assertThat(five.times(2)).isEqualTo(Money.franc(10));
-    assertThat(five.times(3)).isEqualTo(Money.franc(15));
   }
 
   @Test
