@@ -2,11 +2,11 @@ package currency;
 
 import java.util.Objects;
 
-public abstract class Money {
+public class Money {
   protected int amount;
   protected String currency;
 
-  public Money(int amount, String currency) {
+  protected Money(int amount, String currency) {
     this.amount = amount;
     this.currency = currency;
   }
@@ -19,21 +19,31 @@ public abstract class Money {
     return new Franc(amount, "CHF");
   }
 
-  abstract Money times(int multiplier);
+  Money times(int multiplier) {
+    return new Money(amount * multiplier, currency);
+  }
+
   protected String currency() {
     return currency;
   }
 
   @Override
   public boolean equals(Object o) {
-    if (this == o) return true;
-    if (o == null || getClass() != o.getClass()) return false;
     Money money = (Money) o;
-    return amount == money.amount;
+    return amount == money.amount
+            && currency().equals(money.currency());
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(amount);
+    return Objects.hash(amount, currency);
+  }
+
+  @Override
+  public String toString() {
+    return "Money{" +
+            "amount=" + amount +
+            ", currency='" + currency + '\'' +
+            '}';
   }
 }

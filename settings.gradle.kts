@@ -1,2 +1,2 @@
-rootProject.name = "netty-in-action"
+rootProject.name = "tdd-by-example"
 
